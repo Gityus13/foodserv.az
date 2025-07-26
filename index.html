@@ -1,143 +1,624 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FoodServ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fffbe6;
-      color: #333;
-    }
-
-    header {
-      background: #ff5722;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      text-align: center;
-      background: #ffc107;
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: #333;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
-      background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-    }
-
-    .hero p {
-      font-size: 20px;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .menu-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .menu-item {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 20px;
-      width: 250px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
-    }
-
-    .menu-item:hover {
-      transform: scale(1.03);
-    }
-
-    footer {
-      text-align: center;
-      background: #ff5722;
-      color: white;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodService - Azərbaycanda Premium Qida Distribütoru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-float-delay {
+            animation: float 3s ease-in-out 0.5s infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .stats-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-12 w-auto animate-float" src="https://via.placeholder.com/150x50?text=FoodService" alt="FoodService Loqo">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-green-600 px-3 py-2 rounded-md text-sm font-medium hover:bg-green-50 transition">Əsas Səhifə</a>
+                        <a href="#about" class="text-gray-700 px-3 py-2 rounded-md text-sm font-medium hover:bg-green-50 hover:text-green-600 transition">Haqqımızda</a>
+                        <a href="#products" class="text-gray-700 px-3 py-2 rounded-md text-sm font-medium hover:bg-green-50 hover:text-green-600 transition">Məhsullar</a>
+                        <a href="#services" class="text-gray-700 px-3 py-2 rounded-md text-sm font-medium hover:bg-green-50 hover:text-green-600 transition">Xidmətlər</a>
+                        <a href="#contact" class="text-gray-700 px-3 py-2 rounded-md text-sm font-medium hover:bg-green-50 hover:text-green-600 transition">Əlaqə</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button class="bg-green-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-green-700 transition flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i> +994 12 345 67 89
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-600 hover:bg-gray-100 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-green-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50">Əsas Səhifə</a>
+                <a href="#about" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600">Haqqımızda</a>
+                <a href="#products" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600">Məhsullar</a>
+                <a href="#services" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600">Xidmətlər</a>
+                <a href="#contact" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600">Əlaqə</a>
+                <button class="w-full bg-green-600 text-white px-6 py-2 rounded-full text-base font-medium hover:bg-green-700 transition flex items-center justify-center mt-2">
+                    <i class="fas fa-phone-alt mr-2"></i> +994 12 345 67 89
+                </button>
+            </div>
+        </div>
+    </nav>
 
-  <header>
-    <h1>FoodServ.az</h1>
-    <p>Delicious meals delivered fast & fresh!</p>
-  </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-center text-white fade-in">
+        <div class="max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 slide-in-left">Azərbaycanda Premium Qida Distribütoru</h1>
+            <p class="text-xl md:text-2xl mb-8 slide-in-right">Keyfiyyətli qida məhsullarını bütün ölkə üzrə əla keyfiyyət və qayğı ilə çatdırırıq</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105">
+                    Məhsullarımız <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+                <button class="bg-white hover:bg-gray-100 text-green-600 font-bold py-3 px-8 rounded-full transition transform hover:scale-105">
+                    Əlaqə saxlayın <i class="fas fa-phone-alt ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Menu</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact</a>
-  </nav>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">FoodService Haqqında</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="FoodService Haqqında" class="rounded-lg shadow-xl w-full h-auto">
+                    <div class="absolute -bottom-6 -right-6 bg-green-600 text-white p-6 rounded-lg shadow-lg w-40 h-40 flex flex-col items-center justify-center animate-float">
+                        <span class="text-4xl font-bold">15+</span>
+                        <span class="text-sm">İllik Təcrübə</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Azərbaycanda Qida Distribütoru</h3>
+                    <p class="text-gray-600 mb-6">FoodService 2008-ci ildən bəri Azərbaycanda restoranlara, otellərə, supermarketlərə və katering xidmətlərinə yüksək keyfiyyətli qida məhsulları təqdim edir.</p>
+                    <p class="text-gray-600 mb-8">Keyfiyyətə, etibarlılığa və müştəri məmnuniyyətinə sadiqliyimiz bizi bütün ölkə üzrə qida xidməti biznesləri üçün üstünlük verilən tərəfdaş edib. Məhsullarımızı etibarlı yerli və beynəlxalq təchizatçılardan təmin edirik, müştərilərimiz üçün ən təzə və yüksək keyfiyyətli məhsulları təmin edirik.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Keyfiyyət Zəmanəti</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-truck text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Sürətli Çatdırılma</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-star text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Premium Məhsullar</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-headset text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">24/7 Dəstək</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="hero">
-    <h1>Your Favorite Food</h1>
-    <p>Now just one click away</p>
-  </div>
+    <!-- Stats Section -->
+    <section class="py-16 bg-green-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="stats-item p-6 rounded-lg bg-white bg-opacity-10 transition duration-300">
+                    <div class="text-4xl font-bold mb-2">500+</div>
+                    <div class="text-sm uppercase tracking-wider">Müştəri</div>
+                </div>
+                <div class="stats-item p-6 rounded-lg bg-white bg-opacity-10 transition duration-300">
+                    <div class="text-4xl font-bold mb-2">1000+</div>
+                    <div class="text-sm uppercase tracking-wider">Məhsul</div>
+                </div>
+                <div class="stats-item p-6 rounded-lg bg-white bg-opacity-10 transition duration-300">
+                    <div class="text-4xl font-bold mb-2">24/7</div>
+                    <div class="text-sm uppercase tracking-wider">Dəstək</div>
+                </div>
+                <div class="stats-item p-6 rounded-lg bg-white bg-opacity-10 transition duration-300">
+                    <div class="text-4xl font-bold mb-2">10+</div>
+                    <div class="text-sm uppercase tracking-wider">Şəhər</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="section">
-    <h2>Popular Dishes</h2>
-    <div class="menu-items">
-      <div class="menu-item">
-        <h3>Pizza Margherita</h3>
-        <p>Classic Italian pizza with fresh mozzarella & basil.</p>
-        <strong>$10.99</strong>
-      </div>
-      <div class="menu-item">
-        <h3>Beef Burger</h3>
-        <p>Juicy grilled beef patty with special house sauce.</p>
-        <strong>$8.50</strong>
-      </div>
-      <div class="menu-item">
-        <h3>Shawarma Plate</h3>
-        <p>Freshly sliced meat with rice, salad & sauce.</p>
-        <strong>$7.99</strong>
-      </div>
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Məhsullarımız</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="max-w-2xl mx-auto text-gray-600 mt-6">Yerli və beynəlxalq təchizatçılardan təmin etdiyimiz geniş çeşiddə yüksək keyfiyyətli qida məhsulları təklif edirik.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Təzə Tərəvəzlər" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">Yeni</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Təzə Tərəvəzlər</h3>
+                        <p class="text-gray-600 mb-4">Yerli mənbələrdən təmin edilən, üzvi tərəvəzlər qapınıza təzə çatdırılır.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-green-600 font-bold">$1.99/kq-dan başlayaraq</span>
+                            <button class="text-green-600 hover:text-green-700 font-medium flex items-center">
+                                Ətraflı <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Süd Məhsulları" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Süd Məhsulları</h3>
+                        <p class="text-gray-600 mb-4">Yerli fermalardan premium keyfiyyətli süd, pendir, yoğurt və digər süd məhsulları.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-green-600 font-bold">$2.49-dan başlayaraq</span>
+                            <button class="text-green-600 hover:text-green-700 font-medium flex items-center">
+                                Ətraflı <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1458&q=80" alt="Ət və Quş Əti" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">Populyar</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Ət və Quş Əti</h3>
+                        <p class="text-gray-600 mb-4">Biznesiniz üçün yüksək keyfiyyətli, helal sertifikatlı ət və quş əti məhsulları.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-green-600 font-bold">$5.99/kq-dan başlayaraq</span>
+                            <button class="text-green-600 hover:text-green-700 font-medium flex items-center">
+                                Ətraflı <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 inline-flex items-center">
+                    Bütün Məhsullar <i class="fas fa-chevron-down ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Xidmətlərimiz</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="max-w-2xl mx-auto text-gray-600 mt-6">Biznes ehtiyaclarınıza uyğunlaşdırılmış geniş çeşiddə qida paylama həlləri təqdim edirik.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 rounded-lg p-8 transition duration-300 hover:shadow-lg">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-truck text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Etibarlı Çatdırılma</h3>
+                    <p class="text-gray-600 text-center">Effektiv logistika şəbəkəmiz Azərbaycanın hər yerinə sifarişlərinizin vaxtında çatdırılmasını təmin edir.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 rounded-lg p-8 transition duration-300 hover:shadow-lg">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-boxes text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Topdan Alış</h3>
+                    <p class="text-gray-600 text-center">Toplu sifarişlər üçün xüsusi topdan qiymətlər, qazanc marjlarınızı maksimuma çatdırmaq üçün.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 rounded-lg p-8 transition duration-300 hover:shadow-lg">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-calendar-alt text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Planlı Çatdırılma</h3>
+                    <p class="text-gray-600 text-center">Biznes ehtiyaclarınıza və inventar dövrlərinizə uyğun müntəzəm çatdırılma qrafikləri qurun.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Müştərilərimiz nə deyir</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 -left-6 bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"FoodService 5 ildən çoxdur ki, etibarlı tərəfdaşımızdır. Onların keyfiyyətli məhsulları və etibarlı çatdırılması restoranımızın ardıcıllığını və müştəri məmnuniyyətini qorumağa kömək etdi."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Müştəri" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Rəşad Əliyev</h4>
+                            <p class="text-gray-500 text-sm">Sahib, Bakı Restoranı</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 -left-6 bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Məhsul çeşidi və əla müştəri xidməti FoodService-i ilk seçimimiz edir. Onların komandası həmişə ehtiyaclarımızı qarşılamaq üçün daha çox çalışır."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Müştəri" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Aysəl Məmmədova</h4>
+                            <p class="text-gray-500 text-sm">Satınalma Meneceri, Qrand Otel</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md relative">
+                    <div class="absolute -top-6 -left-6 bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Supermarket şəbəkəsi olaraq, ardıcıl keyfiyyət və rəqabətli qiymətlər üçün FoodService-ə güvənirik. Onların ölkə üzrə paylama şəbəkəsi təsir edicidir."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Müştəri" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Elvin İsmayılov</h4>
+                            <p class="text-gray-500 text-sm">CEO, MarketPlus Supermarketləri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="py-32 text-white parallax" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Bizimlə Əməkdaşlıq Etməyə Hazırsınız?</h2>
+            <p class="text-xl mb-8">Azərbaycan üzrə yüzlərlə məmnun biznesə qoşulun, qida paylanması ehtiyacları üçün FoodService-ə etibar edirlər.</p>
+            <button class="bg-white hover:bg-gray-100 text-green-600 font-bold py-3 px-8 rounded-full transition transform hover:scale-105 inline-flex items-center">
+                Başlayaq <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Əlaqə Saxlayın</h2>
+                    <p class="text-gray-600 mb-8">Sualınız var və ya daha çox məlumat lazımdır? Komandamız bütün qida paylanması ehtiyaclarınızda sizə kömək etməyə hazırdır.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Ünvanımız</h4>
+                                <p class="text-gray-600">123 Qida Küçəsi, Bakı, Azərbaycan</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Telefon Nömrəsi</h4>
+                                <p class="text-gray-600">+994 12 345 67 89</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Email Ünvanı</h4>
+                                <p class="text-gray-600">info@foodservice.az</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Bizi İzləyin</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 hover:bg-green-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-green-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-green-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-green-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Adınız</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="John Smith">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Ünvanı</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Telefon Nömrəsi</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="+994 12 345 67 89">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mesajınız</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="Sizə necə kömək edə bilərik?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition">
+                            Mesaj Göndər <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.428490145674!2d49.85175681535438!3d40.37719087936983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d079efb5163%3A0xc20aa51a5f0b5e01!2sBaku!5e0!3m2!1sen!2saz!4v1625060000000!5m2!1sen!2saz" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
-  </div>
 
-  <footer>
-    <p>&copy; 2025 FoodServ.az | All rights reserved</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://via.placeholder.com/150x50?text=FoodService" alt="FoodService Loqo" class="h-10 mb-4">
+                    <p class="text-gray-400">2008-ci ildən bəri Azərbaycan üzrə premium qida paylanması xidmətləri.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Sürətli Keçidlər</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Əsas Səhifə</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">Haqqımızda</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition">Məhsullar</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Xidmətlər</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Əlaqə</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Məhsullar</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Təzə Tərəvəzlər</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Süd Məhsulları</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Ət və Quş Əti</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Çörək Məmulatları</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">İçkilər</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Xəbər Bülleteni</h4>
+                    <p class="text-gray-400 mb-4">Ən son yeniliklər və təkliflər üçün bülletenimizə abunə olun.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email ünvanınız" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 FoodService. Bütün hüquqlar qorunur.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Məxfilik Siyasəti</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Xidmət Şərtləri</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-green-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.product-card, .stats-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate-float');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Mesajınız üçün təşəkkür edirik! Tezliklə sizinlə əlaqə saxlayacağıq.');
+                contactForm.reset();
+            });
+        }
+    </script>
 </body>
 </html>
