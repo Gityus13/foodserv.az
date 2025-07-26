@@ -432,22 +432,32 @@
                     </div>
                 </div>
                 
-               <form action="https://formsubmit.co/elnur@foodserv.az" method="POST" style="max-width:500px;margin:auto;padding:20px;background:#fff;border-radius:15px;box-shadow:0 0 15px rgba(0,0,0,0.1);font-family:sans-serif;">
+               <form action="https://formsubmit.co/elnur@foodserv.az" method="POST" style="max-width: 600px; margin: auto; padding: 16px; box-sizing: border-box;">
+  <!-- Hidden settings -->
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_autoresponse" value="DJ Yusif ilə əlaqə saxladığınız üçün təşəkkür edirik! Tezliklə sizinlə əlaqə saxlayacağıq.">
 
-  <input type="text" name="name" placeholder="Ad" required 
-    style="width:100%;padding:15px;margin:10px 0;border:1px solid #ccc;border-radius:10px;font-size:16px;box-sizing:border-box;">
+  <label for="topic">Mesajınız nə haqqındadır?</label>
+  <select name="Topic" id="topic" required style="width: 100%; padding: 8px; margin-bottom: 12px;">
+    <option value="">-- Mövzu seçin --</option>
+    <option value="Booking">Rezervasiya</option>
+    <option value="Collaboration">Əməkdaşlıq</option>
+    <option value="Event Details">Tədbir Məlumatı</option>
+    <option value="Other">Digər</option>
+  </select>
 
-  <input type="email" name="" placeholder="Mail" required 
-    style="width:100%;padding:15px;margin:10px 0;border:1px solid #ccc;border-radius:10px;font-size:16px;box-sizing:border-box;">
+  <label for="name">Adınız</label>
+  <input type="text" name="Name" id="name" required style="width: 100%; padding: 8px; margin-bottom: 12px;">
 
-  <textarea name="message" placeholder="Mesaj" required 
-    style="width:100%;padding:15px;margin:10px 0;height:150px;border:1px solid #ccc;border-radius:10px;font-size:16px;box-sizing:border-box;"></textarea>
+  <label for="email">E-poçt ünvanınız</label>
+  <input type="email" name="Email" id="email" required style="width: 100%; padding: 8px; margin-bottom: 12px;">
 
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+  <label for="message">Mesajınız</label>
+  <textarea name="Message" id="message" rows="6" required style="width: 100%; padding: 8px; margin-bottom: 12px;"></textarea>
 
-  <button type="submit" 
-    style="width:100%;padding:15px;background:#007BFF;color:white;border:none;border-radius:10px;font-size:16px;cursor:pointer;">Göndər</button>
+  <div class="g-recaptcha" data-sitekey="6LdGBGwrAAAAAG_2v8Qu4U7mVR-ODfNmoyfhOciD" style="margin-bottom: 16px;"></div>
+
+  <button type="submit" style="width: 100%; padding: 12px; background-color: #333; color: white; border: none; cursor: pointer;">Mesaj Göndər</button>
 </form>
             
             </div>
@@ -558,16 +568,7 @@
         
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
-        
-        // Form submission
-        const contactForm = document.querySelector('form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Mesajınız üçün təşəkkür edirik! Tezliklə sizinlə əlaqə saxlayacağıq.');
-                contactForm.reset();
-            });
-        }
+    
     </script>
 </body>
 </html>
