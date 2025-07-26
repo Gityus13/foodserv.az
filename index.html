@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodServ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffbe6;
+      color: #333;
+    }
+
+    header {
+      background: #ff5722;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      text-align: center;
+      background: #ffc107;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #333;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .hero p {
+      font-size: 20px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .menu-item {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      background: #ff5722;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FoodServ.az</h1>
+    <p>Delicious meals delivered fast & fresh!</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Your Favorite Food</h1>
+    <p>Now just one click away</p>
+  </div>
+
+  <div class="section">
+    <h2>Popular Dishes</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <h3>Pizza Margherita</h3>
+        <p>Classic Italian pizza with fresh mozzarella & basil.</p>
+        <strong>$10.99</strong>
+      </div>
+      <div class="menu-item">
+        <h3>Beef Burger</h3>
+        <p>Juicy grilled beef patty with special house sauce.</p>
+        <strong>$8.50</strong>
+      </div>
+      <div class="menu-item">
+        <h3>Shawarma Plate</h3>
+        <p>Freshly sliced meat with rice, salad & sauce.</p>
+        <strong>$7.99</strong>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FoodServ.az | All rights reserved</p>
+  </footer>
+
+</body>
+</html>
