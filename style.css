@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Səhifə Tapılmadı</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nature: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-nature-50 min-h-screen flex flex-col items-center justify-center font-sans">
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="leaf leaf-1 animate-float1"></div>
+        <div class="leaf leaf-2 animate-float2"></div>
+        <div class="leaf leaf-3 animate-float3"></div>
+        <div class="leaf leaf-4 animate-float4"></div>
+        <div class="leaf leaf-5 animate-float5"></div>
+    </div>
+
+    <main class="z-10 text-center px-6 py-12 max-w-2xl mx-auto">
+        <h1 class="text-9xl font-bold text-nature-600 mb-4 animate-bounce">404</h1>
+        <h2 class="text-4xl font-semibold text-nature-800 mb-6">Səhifə tapılmadı! 🌱</h2>
+        <p class="text-xl text-nature-700 mb-8">
+            Axtardığınız səhifə köçürülmüş, silinmiş və ya mövcud deyil. <br>
+            Gəlin sizi düzgün yola yönəldək!
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="/" class="px-6 py-3 bg-nature-600 hover:bg-nature-700 text-white font-medium rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-nature-300">
+                Əsas Səhifəyə Qayıt
+            </a>
+            <a href="#" class="px-6 py-3 border-2 border-nature-600 text-nature-600 hover:bg-nature-100 font-medium rounded-full transition-all transform hover:scale-105">
+                Əlaqə Saxlayın
+            </a>
+        </div>
+    </main>
+
+    <a href="/" class="fixed bottom-6 right-6 z-20">
+        <div class="logo-circle animate-pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </div>
+    </a>
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
