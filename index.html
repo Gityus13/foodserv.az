@@ -110,9 +110,9 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <button class="bg-green-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-green-700 transition flex items-center">
+                        <a href="#contact" class="bg-green-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-green-700 transition flex items-center">
                             <i class="fas fa-phone-alt mr-2"></i> +994 50 706 9438
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
@@ -131,9 +131,9 @@
                 <a href="#products" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600">Məhsullar</a>
                 <a href="#services" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600">Xidmətlər</a>
                 <a href="#contact" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600">Əlaqə</a>
-                <button class="w-full bg-green-600 text-white px-6 py-2 rounded-full text-base font-medium hover:bg-green-700 transition flex items-center justify-center mt-2">
-                    <i class="fas fa-phone-alt mr-2"></i> +994 12 345 67 89
-                </button>
+                <a href="#contact" class="w-full bg-green-600 text-white px-6 py-2 rounded-full text-base font-medium hover:bg-green-700 transition flex items-center justify-center mt-2">
+                    <i class="fas fa-phone-alt mr-2"></i> +994 50 706 9438
+                </a>
             </div>
         </div>
     </nav>
@@ -144,8 +144,6 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-6 slide-in-left">Azərbaycanda Premium Qida Distribütoru</h1>
             <p class="text-xl md:text-2xl mb-8 slide-in-right">Keyfiyyətli qida məhsullarını bütün ölkə üzrə əla keyfiyyət və qayğı ilə çatdırırıq</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-          
-            </div>
         </div>
     </section>
 
@@ -377,23 +375,17 @@
     </section>
 
     <!-- Parallax Section -->
-    <section class="py-32 text-white parallax" style="background-image: url('https://howdyhealth.tamu.edu/wp-content/uploads/2023/11/3-easy-ways-to-eat-more-vegetables.jpg');">
+        <section id="contact" class="py-32 text-white parallax" style="background-image: url('https://howdyhealth.tamu.edu/wp-content/uploads/2023/11/3-easy-ways-to-eat-more-vegetables.jpg');">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Bizimlə Əməkdaşlıq Etməyə Hazırsınız?</h2>
             <p class="text-xl mb-8">Azərbaycan üzrə yüzlərlə məmnun biznesə qoşulun, qida paylanması ehtiyacları üçün FoodService-ə etibar edirlər.</p>
-          </div>
-    </section>
-
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <button style="background-color: #4CAF50; color: white; padding: 20px 60px; font-size: 24px; border: none; border-radius: 10px; cursor: pointer;" onclick="window.location.href='https://info.foodserv.az'">
-    Əlaqə Saxlayın
-  </button>
-    </div>
-    
+            <a href="https://info.foodserv.az" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium px-8 py-3 rounded-full transition duration-300 shadow-lg">
+                Əlaqə Saxlayın
+            </a>
         </div>
     </section>
 
- <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -452,9 +444,15 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                if (targetId === "#") return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
                 
                 // Close mobile menu if open
                 mobileMenu.classList.add('hidden');
